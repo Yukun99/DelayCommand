@@ -1,0 +1,16 @@
+#Messages Version 1 by Yukun
+#Placeholders:
+#- %time% for remaining delay time. Only usable in Waiting message.
+Messages:
+  #Prefix before all the messages.
+  Prefix: '&bDelay&eCommand&f >> &7'
+  #Message sent when player uses the command.
+  Sending: 'Do not move! Please wait while we parse your command...'
+  #Message sent when command has been successfully performed.
+  CommandSent: '&aYour command has been parsed!'
+  #Message sent when player moves when the command is being sent.
+  Moved: '&cYou have moved! Pending command cancelled!'
+  #Message sent when the player tries to use the command when he is still waiting.
+  Waiting: 'Please wait %time% before we send your command.'
+  #Message sent when a player dies during the command delay
+  Dead: 'You died while your command was being parsed. Command cancelled!'

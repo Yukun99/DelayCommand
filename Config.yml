@@ -1,0 +1,57 @@
+#Config Version 1 by Yukun
+#Placeholders:
+#- %player% for player's actual in game name. Usable in command arguments.
+Commands:
+  ###########
+  # Example #
+  ###########
+#  #Name of command to be delayed. For more details read the plugin page. This is not case sensitive.
+#  Manuadd:
+#    #Time to delay.
+#    Time: '80'
+#    #Enable this to check specific commands.
+#    #This means you have to type each specific command out.
+#    Fuzzy: 'false'
+#    #The rest of the command you want the plugin to check.
+#    #This will check 'manuadd %player% VIP', 'manuadd %player% Owner' and 'manuadd %player% Admin'.
+#    Args:
+#      - '%player% VIP'
+#      - '%player% Owner'
+#      - '%player% Admin'
+
+  ############
+  # Commands #
+  ############
+  Spawn:
+    Time: '100'
+    Fuzzy: 'true'
+    Args:
+      - ''
+  Tpa:
+    Time: '60'
+    Fuzzy: 'true'
+    Args:
+      - ''
+  Pv:
+    Time: '20'
+    Fuzzy: 'false'
+    Args:
+      - '1'
+      - '2'
+
+Options:
+  ###################
+  # General Options #
+  ###################
+  #Choose whether you want the delay to be in seconds or ticks.
+  #If you want seconds enable the second option and disable the first with a #.
+  DelayFormat: 'ticks'
+  #DelayFormat: 'seconds'
+
+  ###################
+  # Message Options #
+  ###################
+  EnableDeadMessage: 'true' #Toggle sending of the Dead message.
+  EnableSendingMessage: 'true' #Toggle sending of the Sending message.
+  EnableWaitingMessage: 'true' #Toggle sending of the Waiting message.
+  EnableCommandSentMessage: 'true' #Toggle sending of the CommandSent message.
