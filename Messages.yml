@@ -14,3 +14,5 @@ Messages:
   Waiting: 'Please wait %time% before we send your command.'
   #Message sent when a player dies during the command delay
   Dead: 'You died while your command was being parsed. Command cancelled!'
+  #Message sent when a player gets combat tagged.
+  Tagged: '&cYou are combat tagged! Command cancelled!'

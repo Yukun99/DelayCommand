@@ -1,9 +1,26 @@
 package me.Yukun.DelayCommand;
 
+import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 
+import net.minelink.ctplus.CombatTagPlus;
+
 public class Api {
+	
+	public static Boolean isTagged(Player player) {
+		if (Bukkit.getPluginManager().getPlugin("CombatTagPlus") != null) {
+			CombatTagPlus ct = CombatTagPlus.getPlugin(CombatTagPlus.class);
+			if (ct.getTagManager().isTagged(player.getUniqueId())) {
+				return true;
+			} else {
+				return false;
+			}
+		} else {
+			return false;
+		}
+	}
+	
 	public static String color(String msg) {
 		return ChatColor.translateAlternateColorCodes('&', msg);
 	}
