@@ -1,6 +1,6 @@
 name: DelayCommand
 author: Yukun
 main: me.Yukun.DelayCommand.Main
-version: 1.0.5
+version: 1.0.6
 description: >
              A plugin to delay the sending of commands.

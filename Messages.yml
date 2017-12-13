@@ -1,6 +1,7 @@
 #Messages Version 1 by Yukun
 #Placeholders:
 #- %time% for remaining delay time. Only usable in Waiting message.
+#- %command% for sent command in single quotes. Usable anywhere but Prefix, Moved, Dead and Tagged
 Messages:
   #Prefix before all the messages.
   Prefix: '&bDelay&eCommand&f >> &7'

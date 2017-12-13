@@ -86,7 +86,8 @@ public class DelayCommand implements Listener {
 						if (performing2.get(player) == false) {
 							if (!Api.isTagged(player)) {
 								if (Api.getConfigString("Options.EnableSendingMessage").equalsIgnoreCase("true")) {
-									player.sendMessage(Api.color(prefix + sending));
+									player.sendMessage(Api
+											.color(prefix + sending.replace("%command%", "'" + e.getMessage() + "'")));
 								}
 								performing2.put(player, true);
 								perfcmd.put(player, e.getMessage().replace("/", ""));
@@ -117,9 +118,10 @@ public class DelayCommand implements Listener {
 													Bukkit.getServer().getScheduler()
 															.cancelTask(CountDown.get(fplayer));
 													CountDown.remove(fplayer);
-													fplayer.sendMessage(Api.color(prefix + tagged));
+													fplayer.sendMessage(Api.color(prefix
+															+ tagged.replace("%command%", "'" + e.getMessage() + "'")));
 													Bukkit.getServer().getScheduler()
-													.cancelTask(TagChecker.get(fplayer));
+															.cancelTask(TagChecker.get(fplayer));
 													TagChecker.remove(fplayer);
 												}
 											}
@@ -139,7 +141,8 @@ public class DelayCommand implements Listener {
 													if (performing2.get(fplayer) != null
 															&& performing2.get(fplayer) == true) {
 														fplayer.performCommand(perfcmd.get(fplayer));
-														fplayer.sendMessage(Api.color(prefix + cmdsent));
+														fplayer.sendMessage(Api.color(prefix + cmdsent
+																.replace("%command%", "'" + e.getMessage() + "'")));
 														performing2.put(fplayer, false);
 														perfcmd.remove(fplayer);
 														maincmd.remove(fplayer);
@@ -150,7 +153,7 @@ public class DelayCommand implements Listener {
 																.cancelTask(CountDown.get(fplayer));
 														CountDown.remove(fplayer);
 														Bukkit.getServer().getScheduler()
-														.cancelTask(TagChecker.get(fplayer));
+																.cancelTask(TagChecker.get(fplayer));
 														TagChecker.remove(fplayer);
 													}
 												}
@@ -165,13 +168,16 @@ public class DelayCommand implements Listener {
 							if (Api.getConfigString("Options.EnableWaitingMessage").equalsIgnoreCase("true")) {
 								if (delay.get(player) == 20) {
 									player.sendMessage(
-											Api.color(prefix + waiting.replace("%time%", time.get(player) / 20 + "")));
+											Api.color(prefix + waiting.replace("%time%", time.get(player) / 20 + "")
+													.replace("%command%", "'" + e.getMessage() + "'")));
 								} else if (delay.get(player) == 1) {
 									player.sendMessage(
-											Api.color(prefix + waiting.replace("%time%", time.get(player) + "")));
+											Api.color(prefix + waiting.replace("%time%", time.get(player) + "")
+													.replace("%command%", "'" + e.getMessage() + "'")));
 								} else {
 									player.sendMessage(
-											Api.color(prefix + waiting.replace("%time%", time.get(player) / 20 + "")));
+											Api.color(prefix + waiting.replace("%time%", time.get(player) / 20 + "")
+													.replace("%command%", "'" + e.getMessage() + "'")));
 								}
 							}
 						}
@@ -182,7 +188,8 @@ public class DelayCommand implements Listener {
 					if (Api.containsString(e.getMessage(), "Commands")) {
 						if (performing2.get(player) == false) {
 							if (Api.getConfigString("Options.EnableSendingMessage").equalsIgnoreCase("true")) {
-								player.sendMessage(Api.color(prefix + sending));
+								player.sendMessage(
+										Api.color(prefix + sending).replace("%command%", "'" + e.getMessage() + "'"));
 							}
 							performing2.put(player, true);
 							perfcmd.put(player, e.getMessage().replace("/", ""));
@@ -212,7 +219,8 @@ public class DelayCommand implements Listener {
 												if (performing2.get(fplayer) != null
 														&& performing2.get(fplayer) == true) {
 													fplayer.performCommand(perfcmd.get(fplayer));
-													fplayer.sendMessage(Api.color(prefix + cmdsent));
+													fplayer.sendMessage(Api.color(prefix + cmdsent.replace("%command%",
+															"'" + e.getMessage() + "'")));
 													performing2.put(fplayer, false);
 													perfcmd.remove(fplayer);
 													maincmd.remove(fplayer);
@@ -223,7 +231,7 @@ public class DelayCommand implements Listener {
 															.cancelTask(CountDown.get(fplayer));
 													CountDown.remove(fplayer);
 													Bukkit.getServer().getScheduler()
-													.cancelTask(TagChecker.get(fplayer));
+															.cancelTask(TagChecker.get(fplayer));
 													TagChecker.remove(fplayer);
 												}
 											}
@@ -234,13 +242,16 @@ public class DelayCommand implements Listener {
 							if (Api.getConfigString("Options.EnableWaitingMessage").equalsIgnoreCase("true")) {
 								if (delay.get(player) == 20) {
 									player.sendMessage(
-											Api.color(prefix + waiting.replace("%time%", time.get(player) / 20 + "")));
+											Api.color(prefix + waiting.replace("%time%", time.get(player) / 20 + "")
+													.replace("%command%", "'" + e.getMessage() + "'")));
 								} else if (delay.get(player) == 1) {
 									player.sendMessage(
-											Api.color(prefix + waiting.replace("%time%", time.get(player) + "")));
+											Api.color(prefix + waiting.replace("%time%", time.get(player) + "")
+													.replace("%command%", "'" + e.getMessage() + "'")));
 								} else {
 									player.sendMessage(
-											Api.color(prefix + waiting.replace("%time%", time.get(player) / 20 + "")));
+											Api.color(prefix + waiting.replace("%time%", time.get(player) / 20 + "")
+													.replace("%command%", "'" + e.getMessage() + "'")));
 								}
 							}
 						}
